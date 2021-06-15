@@ -1,0 +1,244 @@
+.calculate-section {
+  padding: 4rem 0;
+
+  &__number {
+    position: absolute;
+    top: 2rem;
+    left: -20rem;
+  }
+
+  &__step {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+
+    &-circle {
+      width: 6.5rem;
+      height: 6.5rem;
+
+      border-radius: 50%;
+
+      font-weight: 600;
+      font-size: 1.8rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: linear-gradient(180deg, #84AAFF 0%, #547CD4 100%), #C4C4C4;
+
+      color: white;
+
+      text-align: center;
+
+      margin-right: 2rem;
+
+      @media screen and (max-width: $mobile-screen) {
+        min-width: 4.5rem;
+        min-height: 4.5rem;
+
+        width: 4.5rem;
+        height: 4.5rem;
+
+        font-size: 1.5rem;
+      }
+    }
+
+    &-text {
+      font-size: 3rem;
+      font-weight: 600;
+
+      color: $text-color;
+
+      @media screen and (max-width: $table-screen) {
+        font-size: 2.6rem;
+      }
+
+      @media screen and (max-width: $mobile-screen) {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &__data.step-1 {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    margin: 0 -1.5rem 0 -1.5rem;
+
+    @media screen and (max-width: $mobile-screen) {
+      margin: 0;
+    }
+
+    .calculate-section__col {
+      width: 100%;
+      max-width: 33.3333333%;
+
+      text-align: center;
+
+      padding: 1.5rem;
+
+      @media screen and (max-width: $mobile-screen) {
+        max-width: 100%;
+        padding: 1rem 0;
+      }
+    }
+
+    .calculate-section__col-inner {
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      font-size: 1.8rem;
+      font-weight: 600;
+
+      padding: 2rem;
+
+      background-color: #fff;
+
+      border-radius: 1000px;
+      border: 0.3rem solid rgba(0, 57, 80, 0.1);
+
+      transition: all 0.1s linear;
+
+      cursor: pointer;
+
+      @media screen and (max-width: $table-screen) {
+        font-size: 1.4rem;
+      }
+
+      &:hover {
+        background: #84AAFF;
+        border-color: #84AAFF;
+        color: white;
+      }
+    }
+  }
+
+  &__data.step-2 {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+
+    margin: 0 -1.5rem 0 -1.5rem;
+
+    @media screen and (max-width: $table-screen) {
+      flex-wrap: wrap;
+    }
+
+    .calculate-section__col {
+      width: 100%;
+      max-width: 100 / 6 * 1%;
+
+      text-align: center;
+
+      padding: 2.5rem;
+
+      @media screen and (max-width: $table-screen) {
+        max-width: 33.33333%;
+      }
+      @media screen and (max-width: $mobile-screen) {
+        max-width: 50%;
+        padding: 1.5rem;
+      }
+    }
+
+    .calculate-section__col-inner {
+      width: 100%;
+      height: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      font-size: 1.8rem;
+      font-weight: 600;
+
+      padding: 2rem;
+
+      background-color: #fff;
+
+      border: 0.3rem solid rgba(0, 57, 80, 0.1);
+
+      transition: all 0.1s linear;
+
+      cursor: pointer;
+
+
+      span {
+        display: block;
+      }
+
+      img, source {
+        width: 100%;
+        height: auto;
+
+        border: 2px solid transparent;
+      }
+    }
+  }
+
+  &__data.step-3 {
+    display: flex;
+    align-items: stretch;
+
+    @media screen and (max-width: $mobile-screen) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__input-text,
+  &__input-submit {
+    width: 50%;
+    margin-top: -2rem;
+    padding: 2rem;
+
+    @media screen and (max-width: $mobile-screen) {
+      width: 100%;
+      margin: 0;
+      padding: 1rem 0;
+    }
+  }
+
+  &__input-text {
+    margin-left: -2rem;
+    @media screen and (max-width: $mobile-screen) {
+      margin: 0;
+    }
+  }
+
+  &__input-submit {
+    margin-right: -2rem;
+    @media screen and (max-width: $mobile-screen) {
+      margin: 0;
+    }
+  }
+
+
+  .input-step-1:checked + label {
+    background: #84AAFF;
+    border-color: #84AAFF;
+    color: white;
+  }
+
+  .input-step-2:checked + label {
+    border: 2px solid $color-main;
+  }
+
+  .input-step-2 + label {
+    border: 2px solid transparent;
+  }
+}

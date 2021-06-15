@@ -1,0 +1,35 @@
+@mixin r($width)
+  @media only screen and (max-width: $width)
+    @content
+
+@mixin rmin($width)
+  @media only screen and (min-width: ($width + 1))
+    @content
+
+@mixin rh($height)
+  @media only screen and (max-height: $height)
+    @content
+
+@mixin rhmin($height)
+  @media only screen and (min-height: ($height + 1))
+    @content
+
+@mixin font-face($font-name,$font-file)
+  @font-face
+    font-family: '#{$font-name}'
+    font-display: swap
+    src: url('../fonts/#{$font-file}.woff') format('woff'),
+    url('../fonts/#{$font-file}.woff2') format('woff2')
+
+@mixin gradiendHorizontal($startColor,$endColor, $startPercent:0%, $endPercent:100%)
+  background: $startColor
+  background: -moz-linear-gradient(left, $startColor $startPercent, $endColor $endPercent)
+  background: -webkit-linear-gradient(left, $startColor $startPercent,$endColor $endPercent)
+  background: linear-gradient(to right, $startColor $startPercent,$endColor $endPercent)
+//filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#ffffff',GradientType=1 )
+@mixin gradiendVertical($startColor,$endColor, $startPercent:0%, $endPercent:100%)
+  background: $startColor
+  background: -moz-linear-gradient(top, $startColor $startPercent, $endColor $endPercent)
+  background: -webkit-linear-gradient(top, $startColor $startPercent,$endColor $endPercent)
+  background: linear-gradient(to bottom, $startColor $startPercent,$endColor $endPercent)
+//filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#ffffff',GradientType=1 )

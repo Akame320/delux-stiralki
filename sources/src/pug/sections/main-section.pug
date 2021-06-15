@@ -1,0 +1,28 @@
+mixin list(object)
+    li
+        +svgIcon({name: object.name})
+        span !{object.text}
+section.main-section
+    .main-section__wrapper
+        .main-section__bg
+            +setImg({
+                webp: 'images/content/main-section/bg-pc.webp',
+                img: 'images/content/main-section/bg-pc.jpg',
+                set: 'images/content/main-section/bg-pc',
+            })
+        .main-section__inner
+            .container
+                .price-section__number
+                    .section-number 01
+                .main-section__data
+                    h1.title.main-section__title.
+                        БЫСТРЫЙ, КАЧЕСТВЕННЫЙ Ремонт стиральной машины
+                        в день обращения от 6 000 тг
+                    ul.main-section__list
+                        +list({name: 'clock', text: 'Выезд в течение 15 минут'})
+                        +list({name: 'warranty', text: 'Гарантия 12 месяцев на все виды работ'})
+                        +list({name: 'original', text: 'Оригинальные запчасти напряму от заводов производителей'}).main-section__whatssap
+                    .main-section__whatssap
+                        .main-section__whatssap-title <span class='text-bold'>Оставьте заявку на бесплатный выезд и диагностику</span> вашей стиральной машины
+                        .main-section__whatssap-btn
+                            a(href='dfgdfg').btn.btn--blue написать нам в Whats app

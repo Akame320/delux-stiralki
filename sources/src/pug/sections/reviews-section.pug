@@ -1,0 +1,31 @@
+mixin slide(object)
+    .reviews-section__slide
+        .reviews-section__slide-inner
+            picture
+                source(srcset=object.img + '-pc.webp' media="(min-width: 767px)" alt=object.alt type='image/webp')
+                source(srcset=object.img + '-mb.webp' media="(min-width: 0) and (max-width: 767px)" alt=object.alt type='image/webp')
+                img(src=object.img + '-pc.png' srcset=object.img + '-mb.png' + ' 767w' alt=object.alt)
+section.reviews-section
+    .container
+        .reviews-section__wrapper
+            .reviews-section__inner
+                .reviews-section__number
+                    .section-number 04
+                .reviews-section__title
+                    h2.title.
+                        Обратная связь клиентов
+                        - лучшая оценка нашей работы
+                .reviews-section__slider-wrapper
+                    .reviews-section__arrow
+                        .reviews-section__arrow-prev
+                            +svgIcon({name: 'arrow'})
+                        .reviews-section__arrow-next
+                            +svgIcon({name: 'arrow'})
+                    .reviews-section__slider
+                        +slide({img: 'images/content/reviews-section/0'})
+                        +slide({img: 'images/content/reviews-section/0'})
+                        +slide({img: 'images/content/reviews-section/0'})
+                        +slide({img: 'images/content/reviews-section/0'})
+
+
+

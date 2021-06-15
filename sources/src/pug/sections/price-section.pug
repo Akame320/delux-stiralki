@@ -1,0 +1,38 @@
+mixin col(object)
+    .price-section__col
+        .price-section__col-inner
+            .price-section__col-img
+                picture
+                    source(srcset=object.img + '.webp' media="(min-width: 767px)" alt=object.alt type='image/webp')
+                    img(src=object.img + '.jpg' alt=object.alt)
+            .price-section__col-data
+                .price-section__col-title !{object.title}
+                .price-section__col-price !{object.price}
+section.price-section
+    .container
+        .price-section__wrapper
+            .price-section__inner
+                .price-section__number
+                    .section-number 02
+                .price-section__title
+                    h2.title СТОИМОСТЬ РЕМОНТА <br> холодильника  в Алматы
+                .price-section__subtitle
+                    +svgIcon({name: 'working'})
+                    span Диагностика и выезд мастера - БЕСПЛАТНО
+                .price-section__data
+                    +col({img: "images/content/price-section/0", title: "Замена подшипников и сальников", price: "от 2 500 тг"})
+                    +col({img: "images/content/price-section/1", title: "Замена УБЛ (устройство блокировки люка)", price: "от 2500 тг"})
+                    +col({img: "images/content/price-section/2", title: "Ремонт барабана", price: "от 3000 тг"})
+                    +col({img: "images/content/price-section/3", title: "Замена заливного клапана", price: "от 1500 тг"})
+                    +col({img: "images/content/price-section/4", title: "Ремонт платы управления", price: "от 4500 тг"})
+                    +col({img: "images/content/price-section/5", title: "Извлечение посторонних предметов (без разборки бака)", price: "от 1500 тг"})
+                    +col({img: "images/content/price-section/6", title: "Замена ТЭНа (нагревательный элемент)", price: "от 5000 тг"})
+                    +col({img: "images/content/price-section/7", title: "Замена аквастопа", price: "от 5000 тг"})
+                    +col({img: "images/content/price-section/8", title: "Замена сливного насоса (помпы)", price: "от 4500 тг"})
+                    +col({img: "images/content/price-section/9", title: "Замена ручки, петли люка", price: "от 3500 тг"})
+                    +col({img: "images/content/price-section/10", title: "Замена манжеты люка", price: "от 3500 тг"})
+                    +col({img: "images/content/price-section/11", title: "Замена пресостата (датчика уровня воды)", price: "от 2500 тг"})
+                    +col({img: "images/content/price-section/12", title: "Замена электродвигателя", price: "от 3500 тг"})
+                    +col({img: "images/content/price-section/13", title: "Замена термостата (датчик температуры)", price: "от 3500 тг"})
+                .price-section__text
+                    p *точная стоимость ремонта стиральной машины зависит от производителя и модели, будет известна после диагностики мастером.

@@ -1,0 +1,62 @@
+mixin col(object)
+    .calculate-section__col
+        if(object.checked)
+            input(type='radio' name='type-problems' id=object.id checked ).input-step-1
+        else
+            input(type='radio' name='type-problems' id=object.id ).input-step-1
+        label(for=object.id).calculate-section__col-inner !{object.text}
+mixin col2(object)
+    .calculate-section__col
+        if(object.checked)
+            input(type='radio' name='type-brand' checked id=object.id).input-step-2
+        else
+            input(type='radio' name='type-brand' id=object.id).input-step-2
+        label(for=object.id).calculate-section__col-inner
+            picture
+                source(srcset=object.img + '.webp' media="(min-width: 767px)" alt=object.alt type='image/webp')
+                img(src=object.img + '.jpg' alt=object.alt)
+sectiom.calculate-section
+    .container
+        .calculate-section__wrapper
+            form.calculate-section__inner.form-submit
+                .calculate-section__number
+                    .section-number 03
+                .calculate-section__title
+                    h2.title Расчитайте стоимость ремонта неисправностей холодильника
+                .calculate-section__step
+                    .calculate-section__step-circle 1 <br> шаг
+                    .calculate-section__step-text Какая проблема с вашим холодильником
+                .calculate-section__data.step-1
+                    +col({id: 'calculate-1', text: 'НЕ ВКЛЮЧАЕТСЯ ХОЛОДИЛЬНИК', checked: true})
+                    +col({id: 'calculate-2', text: 'НЕ ОХЛАЖДАЕТ ХОЛОДИЛЬНАЯ КАМЕРА'})
+                    +col({id: 'calculate-3', text: 'ТЕЧЕТ ХОЛОДИЛЬНИК'})
+                    +col({id: 'calculate-4', text: 'ХОЛОДИЛЬНИК ПЕРЕМОРАЖИВАЕТ'})
+                    +col({id: 'calculate-5', text: 'ХОЛОДИЛЬНИК ГРОМКО РАБОТАЕТ (ШУМИТ)'})
+                    +col({id: 'calculate-6', text: 'НЕ РАБОТАЕТ КОМПРЕССОР ХОЛОДИЛЬНИКА'})
+                .calculate-section__step
+                    .calculate-section__step-circle 2 <br>  шаг
+                    .calculate-section__step-text Выберите бренд вашего холодильника
+                .calculate-section__data.step-2
+                    +col2({id: "calculate-step-1", img: 'images/content/calculate-section/3', checked: true})
+                    +col2({id: "calculate-step-2", img: 'images/content/calculate-section/1'})
+                    +col2({id: "calculate-step-3", img: 'images/content/calculate-section/2'})
+                    +col2({id: "calculate-step-4", img: 'images/content/calculate-section/4'})
+                    +col2({id: "calculate-step-5", img: 'images/content/calculate-section/5'})
+                    .calculate-section__col
+                        input(type="radio" name="step-2" id='calculate-step-6').input-step-2
+                        label(for='calculate-step-6').calculate-section__col-inner
+                            span.text-link Другой бренд
+                .calculate-section__step
+                    .calculate-section__step-text Оставьте свой номер, чтобы получить расчёт ремонта
+                .calculate-section__data.step-3
+                    .calculate-section__input-text
+                        .label-text
+                            input(type='text' id='tel' placeholder='Телефон*(вводится без 8)' name='tel').input-text.js-mask
+                    .calculate-section__input-submit
+                        .label-submit
+                            input(type='submit' value='Получить  расчет стоимости').input-submit.ajax-submit
+                        span <input type="hidden" name="utm_source" value="">
+                        span <input type="hidden" name="utm_medium" value="">
+                        span <input type="hidden" name="utm_campaign" value="">
+                        span <input type="hidden" name="utm_content" value="">
+                        span <input type="hidden" name="utm_term" value="">

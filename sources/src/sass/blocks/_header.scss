@@ -1,0 +1,292 @@
+.header {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  //height: 10rem;
+  padding: 4rem 0;
+  z-index: 500;
+  transition: padding $anim ease;
+
+  &__contacts {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 205 / 1270 * 100%;
+
+    @media screen and (max-width: $desctop-xs) {
+      max-width: 18.5%;
+      margin-right: -35rem;
+    }
+    @media screen and (max-width: $table-screen) {
+      display: none;
+    }
+  }
+
+  &__contacts-tel {
+    display: flex;
+    align-items: stretch;
+  }
+
+  &__contacts-icon {
+    width: 3.8rem;
+    height: 3.8rem;
+
+    @media screen and (max-width: $desctop-xs) {
+      height: 4.2rem;
+    }
+
+    .icon {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__contacts-data {
+    margin-left: 1.5rem;
+  }
+
+  &__contacts-call {
+    font-size: 1.4rem;
+    margin-top: 0.3rem;
+
+    @media screen and (max-width: $desctop-xs) {
+      display: none;
+    }
+  }
+
+  &.fixed-mode {
+    @include rmin($table-screen) {
+      padding: 2rem 0;
+    }
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $header-bg;
+    opacity: .9;
+  }
+
+  .header__inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+
+  }
+
+  @include r($table-screen) {
+    padding: 0;
+    .header__inner {
+      padding: 2rem 0;
+    }
+  }
+
+}
+
+.menu-block {
+  display: block;
+  height: 2rem;
+
+  @media screen and (max-width: $desctop-xs) {
+    order: 3;
+  }
+}
+
+.menu-toggle {
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  margin-top: -2.1rem;
+  right: -.5rem;
+  position: relative;
+  display: none;
+
+  -webkit-tap-highlight-color: transparent;
+
+  @media screen and (max-width: $desctop-xs) {
+    display: block;
+  }
+
+  @media screen and (max-width: $table-screen) {
+    margin-top: -1.7rem;
+  }
+
+
+  .line {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -2rem;
+    height: .3rem;
+    width: 4rem;
+    background: black;
+    transition: all $anim ease;
+    border-radius: .4rem;
+
+    &.top {
+      margin-top: -1.2rem;
+    }
+
+    &.mid {
+      margin-top: 0;
+    }
+
+    &.bot {
+      margin-top: 1.2rem;
+    }
+  }
+
+  &.active {
+    .line {
+      &.top {
+        margin-top: -.2rem;
+        transform: rotate(-135deg);
+      }
+      &.mid {
+        transform: translateX(50%);
+        opacity: 0;
+      }
+      &.bot {
+        margin-top: -.2rem;
+        transform: rotate(135deg);
+      }
+    }
+  }
+}
+
+.menu-list {
+  display: block;
+
+  @media screen and (max-width: $desctop-xs) {
+    display: none;
+  }
+
+  @media screen and (max-width: $desctop-xs) {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-top: 0;
+    width: 100%;
+    transform: translateX(-50%);
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: .9;
+
+      @media screen and (max-width: $table-screen) {
+        left: -2rem;
+        right: -2rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: $mobile-screen) {
+    background: rgba(255, 255, 255, 0.9);
+    left: -2rem;
+    right: -2rem;
+    transform: translateX(0);
+    width: auto;
+  }
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+  @media screen and (max-width: $desctop-xs) {
+    padding-top: 2rem;
+    justify-content: center;
+  }
+
+  & > li {
+    display: block;
+    list-style: none;
+    margin-left: 5rem;
+
+    @media screen and (max-width: $mobile-screen) {
+      margin-bottom: 3rem;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  a {
+    display: block;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    color: $text-color;
+    font-weight: 500;
+    transition: all $anim ease;
+
+    &.active {
+      font-weight: 700;
+    }
+
+    .desktop &:hover {
+      color: $color-main;
+    }
+
+    @media screen and (max-width: $table-screen) {
+      font-size: 2rem;
+    }
+
+    @media screen and (max-width: $mobile-screen) {
+      font-size: 2.6rem!important;
+    }
+  }
+
+  @include r($table-screen) {
+    display: block;
+    padding: 2rem 0;
+
+    & > li {
+      display: block;
+      width: 100%;
+      margin: 0;
+      padding: 2rem 2rem;
+    }
+    a {
+      display: block;
+      text-align: center;
+      font-size: 2.6rem;
+      line-height: 2.2rem;
+    }
+  }
+}
+
+
+[type=checkbox], [type=radio]{
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  position: absolute;
+}

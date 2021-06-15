@@ -1,0 +1,107 @@
+doctype html
+html(lang="ru")
+    head
+        block head
+            title PageTitle
+
+        meta(charset="utf-8")
+        meta(name="keywords" content="")
+
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+        meta(name="format-detection" content="telephone=no")
+
+        link(rel="shortcut icon" href="images/favicons/favicon.ico" type="image/x-icon")
+        link(rel="apple-touch-icon" href="images/favicons/apple-touch-icon.png")
+        link(rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon-180x180.png")
+        link(rel="icon" type="image/png" sizes="192x192" href="images/favicons/android-chrome-192x192.png")
+        link(rel="icon" type="image/png" sizes="96x96" href="images/favicons/android-chrome-96x96.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png")
+        link(rel="manifest" href="images/favicons/manifest.json")
+        link(rel="yandex-tableau-widget" href="images/favicons/yandex-browser-manifest.json")
+        meta(name="msapplication-TileColor" content="#ffffff")
+        meta(name="msapplication-TileImage" content="images/favicons/mstile-144x144.png")
+        meta(name="msapplication-config" content="images/favicons/browserconfig.xml")
+        meta(name="theme-color" content="#ffffff")
+
+        link(rel="stylesheet" href="css/main.min.css")
+        //link(href='https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap', rel='stylesheet')
+
+    body
+        block svg
+            include ../base/_svg
+
+        .layout
+            header.header
+                .container
+                    .header__inner
+                        .header__logo
+                            a(href="index.html").logo
+                                img(src='images/logo.png').logo__img
+                                span.logo__text Сервис центр по ремонту стиральных машин в Алматы и области
+                        .menu-block
+                            a(href="#").menu-toggle
+                                span.line.top
+                                span.line.mid
+                                span.line.bot
+                            .menu-list
+                                ul.menu
+                                    li
+                                        a(href="#").active Главная
+                                    li
+                                        a(href="#") Услуги
+                                    li
+                                        a(href="#") Наши мастера
+                                    li
+                                        a(href="#") Контакты
+                        .header__contacts
+                            .header__contacts-tel
+                                .header__contacts-icon
+                                    +svgIcon({name: 'tel-1'})
+                                .header__contacts-data
+                                    a(href='tel: +77777221715').tel-link +7 777 722 17 15 <br>
+                                    a(href='tel: +77477771749').tel-link +7 747 777 17 49
+                            .header__contacts-call
+                                a.text-link Заказать звонок
+            section.thanks-section
+                .thanks-section__img
+                    picture
+                        source(srcset='images/content/thanks-section/0-pc.webp' type='image/webp')
+                        img(src='images/content/thanks-section/0-pc.png')
+                .container
+                    .thanks-section__wrapper
+                        .thanks-section__inner
+                            .thanks-section__title.
+                                Спасибо! <br>
+                                Ваша заявка принята, наш <br> мастер свяжется с вами.
+                            a.thanks-section__link Вернуться назад
+                            form.thanks-section__form
+                                .thanks-section__form-inner
+                                    .thanks-section__form-title Оставьте заявку и мы свяжемся с вами в течении 1  минуты
+                                    .thanks-section__form-inputs
+                                        .label-text
+                                            input(placeholder='Введите имя').input-text
+                                        .label-text
+                                            input(placeholder='Телефон*(вводится без 8)').input-text
+                                        .label-submit
+                                            input(placeholder='ОСТАВИТЬ ЗАЯВКУ').input-submit
+            footer.footer
+                .container
+                    .footer__bot
+                        .footer__logo
+                            a(href="index.html").logo
+                                img(src='images/logo-white.png').logo__img
+                                span.logo__text Сервис центр по ремонту стиральных машин в Алматы и области
+                        .footer__police
+                            span © ТОО "Service center Deluxe
+                            span Все права защищены.
+                            span Копирование материалов запрещено!
+                        .footer__dev
+                            span Создано командой
+                            picture
+                                source(srcset='images/content/footer/logo-dev-pc.webp' type='image/webp')
+                                img(src='images/content/footer/logo-dev-pc.png' )
+
+        block js
+            script(src="js/main.min.js")

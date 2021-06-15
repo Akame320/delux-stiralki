@@ -1,0 +1,62 @@
+mixin breadcrumbs(arr, cur)
+    .b-breadcrumbs
+        each element in arr
+            a(href=element.link).b-breadcrumbs__link=element.text
+                span &ensp; &mdash; &ensp;
+                span.mobile-active
+                    | ...
+                    | &ensp; &mdash; &ensp;
+        if cur!=''
+            span.b-breadcrumbs__text=cur
+
+
+mixin svgGradient(iconId, startColor, endColor)
+    lineargradient(gradientunits='userSpaceOnUse', x1='0%', y1='0%', x2='0%', y2='100%' id=iconId)
+        stop(stop-color=startColor, offset='0')
+        stop(stop-color=endColor, offset='1')
+
+mixin svgIcon(iconId, gradient1)
+    - var gradient = gradient1 ? gradient1 : 0
+    svg.icon
+        if gradient
+            +svgGradient(gradient.gradientId, gradient.start, gradient.end)
+        use(xlink:href=iconId fill=gradient ? 'url(#'+gradient.gradientId+')': false)
+
+mixin inputForm(obj)
+    label.form__label
+        input(type="text" placeholder=obj.placeholder ? obj.placeholder: false required=obj.required ? obj.required: false).form__input
+
+mixin selectForm(obj)
+    .select
+        input(type='hidden').select__input
+        .select__custom
+            .select__name=obj.placeholder ? obj.placeholder : 'Выберете'
+            .select__icon
+                +svgIcon('#arrow-down')
+        .select-list
+            .select-list__inner.custom-scroll
+                .selet-option(data-value='value0') Sed ut perspiciatis
+                .selet-option(data-value='value1') Nemo enim ipsam
+                .selet-option(data-value='value2') Et harum quidem
+                .selet-option(data-value='value3') Temporibus autem
+                .selet-option(data-value='value4') Itaque earum rerum
+                .selet-option(data-value='value5') Et harum quidem
+                .selet-option(data-value='value6') Temporibus autem
+                .selet-option(data-value='value7') Itaque earum rerum
+
+mixin setImg(object)
+    picture
+        source(srcset=object.webp media="(min-width: 767px)" alt=object.alt type='image/webp')
+        source(srcset=object.set + '.webp' media="(min-width: 0) and (max-width: 767px)" alt=object.alt type='image/webp')
+        img(src=object.img srcset=object.set + '.jpg' + ' 767w' alt=object.alt)
+
+mixin svgIcon(object)
+    svg.icon
+        use(xlink:href='images/skipped-optim.svg#' + object.name)
+
+mixin sectionTitle(object)
+    if(object.subtitle)
+        div(class=object.subclass)
+            div.subtitle !{object.subtitle}
+    div(class=object.class)
+        h2.title !{object.title}

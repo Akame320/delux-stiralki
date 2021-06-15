@@ -1,0 +1,291 @@
+extends base/_layout
+block head
+    title Сервис центр по ремонту холодильников
+block page
+    section(id='intro').main-section
+        .main-section__wrapper
+            .main-section__bg
+                +setImg({
+                    webp: 'images/content/main-section/bg-pc.webp',
+                    img: 'images/content/main-section/bg-pc.jpg',
+                    set: 'images/content/main-section/bg-pc',
+                })
+            .main-section__inner
+                .container
+                    .price-section__number
+                        .section-number 01
+                    .main-section__data
+                        h1.title.main-section__title.
+                            БЫСТРЫЙ, КАЧЕСТВЕННЫЙ Ремонт холодильника в день обращения от  5 000 тг
+                        ul.main-section__list
+                            +list({name: 'clock', text: 'Выезд в течение 15 минут'})
+                            +list({name: 'warranty', text: 'Гарантия 12 месяцев на все виды работ'})
+                            +list({name: 'original', text: 'Оригинальные запчасти напряму от заводов производителей'}).main-section__whatssap
+                        .main-section__whatssap
+                            .main-section__whatssap-title <span class='text-bold'>Оставьте заявку на бесплатный выезд и диагностику</span> вашей стиральной машины
+                            .main-section__whatssap-btn
+                                a(href='https://bit.ly/2Q7fc1W').btn.btn--blue написать нам в Whats app
+    section(id='services').price-section
+        .container
+            .price-section__wrapper
+                .price-section__inner
+                    .price-section__number
+                        .section-number 02
+                    .price-section__title(style='max-width: none')
+                        h2.title СТОИМОСТЬ РЕМОНТА ХОЛОДИЛЬНИКА  в Алматы
+                    .price-section__subtitle
+                        +svgIcon({name: 'working'})
+                        span Диагностика и выезд мастера - БЕСПЛАТНО
+                    .price-section__data
+                        +col({
+                            img: "images/content/price-section/0-pc",
+                            title: "Чистка дренажа",
+                            price: "от 6000 тг"
+                        })
+                        +col({
+                            img: "images/content/price-section/1-pc",
+                            title: "Замена пускозащитного реле",
+                            price: "от 9890 тг"
+                        })
+                        +col({img: "images/content/price-section/2-pc", title: "Регулировка дверцы", price: "от 5000 тг"})
+                        +col({
+                            img: "images/content/price-section/3-pc",
+                            title: "Заправка холодильника фреоном",
+                            price: "от 10000 тг"
+                        })
+                        +col({
+                            img: "images/content/price-section/4-pc",
+                            title: "Замена нагревателя испарителя (модели No-Frost)",
+                            price: "от 10000 тг"
+                        })
+                        +col({
+                            img: "images/content/price-section/5-pc",
+                            title: "Замена испарителя (с заправкой)",
+                            price: "от 7890 тг"
+                        })
+                        +col({
+                            img: "images/content/price-section/6-pc",
+                            title: "Замена плавкого предохранителя (модели No-Frost)",
+                            price: "от 7890 тг"
+                        })
+                        +col({img: "images/content/price-section/7-pc", title: "Ремонт испарителя (с заправкой)", price: "от 6890 тг"})
+                        +col({
+                            img: "images/content/price-section/8-pc",
+                            title: "Замена терморегулятора",
+                            price: "от 9890 тг"
+                        })
+                        +col({
+                            img: "images/content/price-section/9-pc",
+                            title: "Ремонт испарителя No-Frost",
+                            price: "от 10000 тг"
+                        })
+                        +col({
+                            img: "images/content/price-section/10-pc",
+                            title: "Ремонт проводки",
+                            price: "от 8590 тг"
+                        })
+                        +col({
+                            img: "images/content/price-section/11-pc",
+                            title: "Замена шнура электропитания",
+                            price: "от 7000 тг"
+                        })
+                        +col({
+                            img: "images/content/price-section/12-pc",
+                            title: "Замена мотора-компрессора (с заправкой)",
+                            price: "от 8990 тг"
+                        })
+                    .price-section__text
+                        p *точная стоимость ремонта холодильника зависит от производителя и модели, будет известна после диагностики мастером.
+    sectiom.calculate-section
+        .container
+            .calculate-section__wrapper
+                form.calculate-section__inner.form-submit
+                    .calculate-section__number
+                        .section-number 03
+                    .calculate-section__title
+                        h2.title Расчитайте стоимость ремонта неисправностей холодильника
+                    .calculate-section__step
+                        .calculate-section__step-circle 1 <br> шаг
+                        .calculate-section__step-text Какая проблема с вашим холодильником?
+                    .calculate-section__data.step-1
+                        +col-1({id: 'calculate-1', value: 'НЕ ВКЛЮЧАЕТСЯ ХОЛОДИЛЬНИК', text: 'НЕ ВКЛЮЧАЕТСЯ ХОЛОДИЛЬНИК', checked: true})
+                        +col-1({id: 'calculate-2', value: 'НЕ ОХЛАЖДАЕТ ХОЛОДИЛЬНАЯ КАМЕРА', text: 'НЕ ОХЛАЖДАЕТ ХОЛОДИЛЬНАЯ КАМЕРА'})
+                        +col-1({id: 'calculate-3', value: 'ТЕЧЕТ ХОЛОДИЛЬНИК', text: 'ТЕЧЕТ ХОЛОДИЛЬНИК'})
+                        +col-1({id: 'calculate-4', value: 'ХОЛОДИЛЬНИК ПЕРЕМОРАЖИВАЕТ', text: 'ХОЛОДИЛЬНИК ПЕРЕМОРАЖИВАЕТ'})
+                        +col-1({id: 'calculate-5', value: 'ХОЛОДИЛЬНИК ГРОМКО РАБОТАЕТ (ШУМИТ)', text: 'ХОЛОДИЛЬНИК ГРОМКО РАБОТАЕТ (ШУМИТ)'})
+                        +col-1({id: 'calculate-6', value: 'НЕ РАБОТАЕТ КОМПРЕССОР ХОЛОДИЛЬНИКА', text: 'НЕ РАБОТАЕТ КОМПРЕССОР ХОЛОДИЛЬНИКА'})
+                    .calculate-section__step
+                        .calculate-section__step-circle 2 <br>  шаг
+                        .calculate-section__step-text Выберите бренд вашего холодильника
+                    .calculate-section__data.step-2
+                        +col-2({id: "calculate-step-1", values: 'gorenje', img: 'images/content/calculate-section/3', checked: true})
+                        +col-2({id: "calculate-step-2", values: 'bosch', img: 'images/content/calculate-section/1'})
+                        +col-2({id: "calculate-step-3", values: 'ardo', img: 'images/content/calculate-section/2'})
+                        +col-2({id: "calculate-step-4", values: 'philips', img: 'images/content/calculate-section/4'})
+                        +col-2({id: "calculate-step-5", values: 'LG', img: 'images/content/calculate-section/5'})
+                        .calculate-section__col
+                            input(type="radio" value="Другой бренд" name="type-brand" id='calculate-step-6').input-step-2
+                            label(for='calculate-step-6').calculate-section__col-inner
+                                span.text-link Другой бренд
+                    .calculate-section__step
+                        .calculate-section__step-text Оставьте свой номер, чтобы получить расчёт ремонта
+                    .calculate-section__data.step-3
+                        .calculate-section__input-text
+                            .label-text
+                                input(type='text' id='tel' placeholder='Телефон*(вводится без 8)' name='tel').input-text.js-mask
+                        .calculate-section__input-submit
+                            .label-submit
+                                input(type='submit' value='Получить  расчет стоимости').input-submit.ajax-submit
+                            span <input type="hidden" name="utm_source" value="">
+                            span <input type="hidden" name="utm_medium" value="">
+                            span <input type="hidden" name="utm_campaign" value="">
+                            span <input type="hidden" name="utm_content" value="">
+                            span <input type="hidden" name="utm_term" value="">
+    section.reviews-section
+        .container
+            .reviews-section__wrapper
+                .reviews-section__inner
+                    .reviews-section__number
+                        .section-number 04
+                    .reviews-section__title
+                        h2.title.
+                            Обратная связь клиентов
+                            - лучшая оценка нашей работы
+                    .reviews-section__slider-wrapper
+                        .reviews-section__arrow
+                            .reviews-section__arrow-prev
+                                +svgIcon({name: 'arrow'})
+                            .reviews-section__arrow-next
+                                +svgIcon({name: 'arrow'})
+                        .reviews-section__slider
+                            +slide({img: 'images/content/reviews-section/0'})
+                            +slide({img: 'images/content/reviews-section/1'})
+    section(id='team').team-section
+        .container
+            .team-section__wrapper
+                .team-section__inner
+                    .team-section__number
+                        .section-number 05
+                    .team-section__title
+                        h2.title Команда мастеров
+                    .team-section__data
+                        +col-3({
+                            img: 'images/content/team-section/0',
+                            name: 'Евгений Обухов',
+                            status: 'Мастер электронщик',
+                            exp: 'Опыт работы 7 лет'
+                        })
+                        +col-3({
+                            img: 'images/content/team-section/1',
+                            name: 'Вячеслав Ким',
+                            status: 'Мастер',
+                            exp: 'Опыт работы 15 лет'
+                        })
+                        +col-3({
+                            img: 'images/content/team-section/2',
+                            name: 'Матусков Сергей',
+                            status: 'Мастер',
+                            exp: 'Опыт работы 17 лет'
+                        })
+                        +col-3({
+                            img: 'images/content/team-section/3',
+                            name: 'Асет Уразбаев',
+                            status: 'Мастер',
+                            exp: 'Опыт работы 17 лет'
+                        })
+                        +col-3({
+                            img: 'images/content/team-section/4',
+                            name: 'Евгений Жолнеров',
+                            status: 'Смежный мастер быт.тех',
+                            exp: 'Опыт работы 12 лет'
+                        })
+    section.questions-section
+        .container
+            .questions-section__wrapper
+                .questions-section__inner
+                    .questions-section__number
+                        .section-number 06
+                    .questions-section__title
+                        h2.title Часто задаваемые вопросы:
+                    .questions-section__subtitle
+                        .subtitle На любой вопрос, которой Вас мучает - вы получите грамотный и быстрый ответ
+                    .questions-section__data
+                        +item({
+                            title: 'Почему ХОЛОДИЛЬНИК НЕ ОТКЛЮЧАЕТСЯ? ',
+                            text: '<p>Правильная работа компрессора - это работа определенными циклами, длящимися приблизительно 20-25 минут, потом отключение.</p> <br> <p>Неисправности могут быть следующими: <br> Неисправен термостат или датчик температуры; <br> Вышел из строя модуль управления; <br> Засорилась трубка испарителя;<br> Произошла утечка фреона;<br> Компрессор вышел из строя <br>'
+                        })
+                        +item({
+                            text: '<p>Причин, по которым может холодильник издает нестандартные звуки, (шумит или гудит) может быть несколько, начиная от неправильного расположения холодильника и заканчивая поломкой компрессора:</p> <br> <p>Неправильная работа вентилятора <br> Нарушение работы электрической цепи <br> Засорение фильтра холодильника <br> Ослабление креплений компрессора <br> Неправильное расположение холодильника <br> Неисправность в двигателе (компрессоре) холодильника</p>',
+                            title: 'Почему ХОЛОДИЛЬНИК  ГРОМКО РАБОТАЕТ?'
+                        })
+                        +item({
+                            title: 'Почему ХОЛОДИЛЬНИК ПЕРЕМОРАЖИВАЕт? ',
+                            text: '<p>Слишком низкая температура в холодильной камере может привезти к порче продуктов и быть признаком следующих неисправностей:</p> <br> <p>неисправен клапан переключения режимов. В одной из камер слишком теплая температура, а другая наоборот перемораживает; <br> неисправен воздушный датчик (температура ниже установленной);<br>  неисправен терморегулятор. Постоянно держится температура ниже, чем установлена регулятором;</p>'
+                        })
+                        +item({
+                            title: 'Холодильник не морозит. В чем может быть причина?',
+                            text: '<p>Причин, по которым холодильник недостаточно охлаждает либо не охлаждает полностью несколько, наиболее часто встречаются следующие:</p> <br> <p> неплотно закрыта дверь, (износился уплотнитель) при этом происходит нарастание снежной "шубы" в камере; <br> возможно, неисправен датчик камеры, термостат, или нарушение в электронном блоке управления; <br> в системе недостаточно фреона и его количества достаточно, чтобы поддержать режим другой камеры; <br> образовалась пробка в капиллярной трубке;<br> упала компрессия – недостаточное сжатие газа.</p>'
+                        })
+                        +item({
+                            text: '<p>Вода может быть обнаружена под холодильником или скапливаться внутри под овощными ящиками, вытекать из морозилки. <br> Причины подтекания холодильника возможны следующие:</p>  <br>  <p>поломка термостата;  <br> перегрев испарителя (в холодильниках с системой «No Frost»);  <br> закупорка дренажного отверстия в холодильной камере;  <br> неправильное положение трубки слива.      </p>',
+                            title: 'С холодильника течет вода. Что делать?'
+                        })
+    include sections/popup-section
+
+mixin list(object)
+    li
+        +svgIcon({name: object.name})
+        span !{object.text}
+
+mixin col(object)
+    .price-section__col
+        .price-section__col-inner
+            .price-section__col-img
+                picture
+                    source(srcset=object.img + '.webp' media="(min-width: 767px)" alt=object.alt type='image/webp')
+                    img(src=object.img + '.jpg' alt=object.alt)
+            .price-section__col-data
+                .price-section__col-title !{object.title}
+                .price-section__col-price !{object.price}
+mixin col-1(object)
+    .calculate-section__col
+        if(object.checked)
+            input(type='radio' value=object.value name='type-problems' id=object.id checked ).input-step-1
+        else
+            input(type='radio' value=object.value name='type-problems' id=object.id ).input-step-1
+        label(for=object.id).calculate-section__col-inner !{object.text}
+mixin col-2(object)
+    .calculate-section__col
+        if(object.checked)
+            input(type='radio' value=object.value name='type-brand' checked id=object.id).input-step-2
+        else
+            input(type='radio' value=object.value name='type-brand' id=object.id).input-step-2
+        label(for=object.id).calculate-section__col-inner
+            picture
+                source(srcset=object.img + '.webp' media="(min-width: 767px)" alt=object.alt type='image/webp')
+                img(src=object.img + '.jpg' alt=object.alt)
+mixin slide(object)
+    .reviews-section__slide
+        .reviews-section__slide-inner
+            picture
+                source(srcset=object.img + '-pc.webp' media="(min-width: 767px)" alt=object.alt type='image/webp')
+                source(srcset=object.img + '-mb.webp' media="(min-width: 0) and (max-width: 767px)" alt=object.alt type='image/webp')
+                img(src=object.img + '-pc.png' srcset=object.img + '-mb.png' + ' 767w' alt=object.alt)
+mixin col-3(object)
+    .team-section__col
+        .team-section__col-inner
+            .team-section__col-img
+                +setImg({
+                    webp: object.img + '-pc.webp',
+                    img: object.img + '-pc.jpg',
+                    set: object.img + '-mb'
+                })
+            .team-section__col-name !{object.name}
+            .team-section__col-status !{object.status}
+            .team-section__col-exp !{object.exp}
+mixin item(object)
+    .questions-section__item
+        .questions-section__item-header
+            span !{object.title}
+            +svgIcon({name: 'arrow'})
+        .questions-section__item-body !{object.text}

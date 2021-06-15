@@ -1,0 +1,174 @@
+.footer {
+  background: linear-gradient(180deg, #84AAFF 0%, #547CD4 100%), #C4C4C4;
+  color: white;
+
+  margin-top: 4.5rem;
+
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+
+  @media screen and (max-width: $mobile-screen) {
+    padding: 5rem 0;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+
+    @media screen and (max-width: $table-screen) {
+      flex-direction: column;
+    }
+  }
+
+  &__number {
+    position: absolute;
+    top: 2rem;
+    left: -20rem;
+  }
+
+  &__contacts {
+    width: 100%;
+    max-width: 353 / 1270 * 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    @media screen and (max-width: $table-screen) {
+      max-width: 100%;
+      flex-direction: row;
+    }
+    
+    @media screen and (max-width: $mobile-screen) { 
+        flex-direction: column;
+    }
+  }
+
+  &__map {
+    width: 100%;
+    max-width: 946 / 1270 * 100%;
+
+    border-radius: 5rem;
+
+    overflow: hidden;
+
+    @media screen and (max-width: $table-screen) {
+      max-width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__contacts-icon {
+    width: 3.8rem;
+    height: 3.8rem;
+
+    margin-right: 2rem;
+
+
+  }
+
+  &__contacts-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    margin-bottom: 5rem;
+  }
+
+  &__contacts-data {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    font-size: 1.8rem;
+    font-weight: 600;
+
+    max-width: 25rem;
+
+    a {
+      transition: all 0.1s linear;
+
+      &:hover {
+        color: #9d9d9d;
+      }
+    }
+  }
+
+  &__bot {
+    margin-top: 5rem;
+
+    border-top: 2px solid rgba(255, 255, 255, 0.25);
+
+    padding-top: 5rem;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @media screen and (max-width: $table-screen) {
+      flex-wrap: wrap;
+      padding-top: 3rem;
+    }
+  }
+
+  &__logo {
+    color: white;
+
+    @media screen and (max-width: $table-screen) {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__police {
+    max-width: 34.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    font-size: 1.4rem;
+    font-weight: 400;
+
+    @media screen and (max-width: $mobile-screen) {
+      max-width: 100%;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__dev {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    @media screen and (max-width: $mobile-screen) {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    span {
+      display: block;
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+}

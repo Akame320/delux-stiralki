@@ -1,0 +1,88 @@
+.team-section {
+  padding: 4.5rem 0;
+
+  @media screen and (max-width: $mobile-screen) {
+    padding: 0;
+    padding-bottom: 4.5rem;
+  }
+
+  &__number {
+    position: absolute;
+    top: 2rem;
+    left: -20rem;
+  }
+
+  &__data {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    margin-left: -2rem;
+    margin-right: -2rem;
+    margin-top: -2rem;
+
+    @media screen and (max-width: $mobile-screen) {
+      margin-top: -1rem;
+      margin-right: -1rem;
+      margin-left: -1rem;
+    }
+  }
+
+  &__col {
+    width: 100%;
+    max-width: 33.33333%;
+
+    padding: 2rem;
+
+    @media screen and (max-width: $mobile-screen) {
+      max-width: 50%;
+      padding: 1rem;
+    }
+  }
+
+  &__col-inner {
+    height: 100%;
+    width: 100%;
+
+    img, source {
+      width: 100%;
+      height: auto;
+      max-width: 300px;
+      border-radius: 2rem;
+    }
+  }
+
+  &__col-img {
+    margin-bottom: 2rem;
+
+    @media screen and (max-width: $mobile-screen) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__col-name,
+  &__col-status {
+    font-size: 2rem;
+    font-weight: 700;
+
+    margin-bottom: 0.5rem;
+
+    @media screen and (max-width: $mobile-screen) {
+      font-size: 1.7rem;
+    }
+  }
+
+  &__col-name, {
+    font-weight: 800;
+  }
+
+  &__col-exp {
+    font-size: 1.8rem;
+    font-weight: 600;
+
+    @media screen and (max-width: $mobile-screen) {
+      font-size: 1.6rem;
+    }
+  }
+}

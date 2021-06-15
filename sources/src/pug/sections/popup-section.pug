@@ -1,0 +1,13 @@
+section.popup-section(id='popup')
+    .popup-section__wrapper
+        .popup-section__inner
+            .popup-section__close.popup-close
+                +svgIcon({name: 'close'})
+            form.popup-section__form.form-submit
+                .popup-section__title Оставьте заявку и мы свяжемся с вами в течении 1  минуты
+                .popup-section__input
+                    input(type='text' name='name' placeholder='Введите имя').input-text
+                .popup-section__input
+                    input(type='text' name='tel' placeholder='Телефон*(вводится без 8)').input-text.input-js.input-tel.js-mask
+                .popup-section__input
+                    input(type='submit' value='Отправить').input-submit.ajax-submit

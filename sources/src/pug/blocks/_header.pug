@@ -1,0 +1,34 @@
+header.header
+    .container
+        .header__inner
+            .header__logo
+                a(href="index.html").logo
+                    img(src='images/logo.png').logo__img
+                    span.logo__text Сервис центр по ремонту холодильников в Алматы и области
+            .menu-block
+                a().menu-toggle
+                    span.line.top
+                    span.line.mid
+                    span.line.bot
+                .menu-list
+                    ul.menu
+                        li
+                            a(href="#" data-href='#intro').active Главная
+                        li
+                            a(href="#" data-href='#services') Услуги
+                        li
+                            a(href="#" data-href='#team') Наши мастера
+                        li
+                            a(href="#" data-href='#footer') Контакты
+            .header__contacts
+                .header__contacts-tel
+                    .header__contacts-icon
+                        +svgIcon({name: 'tel-1'})
+                    .header__contacts-data
+                        a(href='tel: +7076599655').tel-link +7 707 659 96 55 <br>
+                        a(href='tel: +77018005727').tel-link +7 701 800 57 27
+                .header__contacts-call.popup-open
+                    a.text-link Заказать звонок
+        //header__inner
+    //container
+//header

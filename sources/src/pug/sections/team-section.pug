@@ -1,0 +1,26 @@
+mixin col(object)
+    .team-section__col
+        .team-section__col-inner
+            .team-section__col-img
+                +setImg({
+                    webp: object.img + '-pc.webp',
+                    img: object.img + '-pc.jpg',
+                    set: object.img + '-mb'
+                })
+            .team-section__col-name !{object.name}
+            .team-section__col-status !{object.status}
+            .team-section__col-exp !{object.exp}
+
+section.team-section
+    .container
+        .team-section__wrapper
+            .team-section__inner
+                .team-section__number
+                    .section-number 05
+                .team-section__title
+                    h2.title Команда мастеров
+                .team-section__data
+                    +col({img: 'images/content/team-section/0', name: 'Евгений Обухов', status: 'Мастер электронщик', exp: 'Опыт работы 7 лет'})
+                    +col({img: 'images/content/team-section/1', name: 'Вячеслав Ким', status: 'Мастер', exp: 'Опыт работы 15 лет'})
+                    +col({img: 'images/content/team-section/2', name: 'Матусков Сергей', status: 'Мастер', exp: 'Опыт работы 17 лет'})
+

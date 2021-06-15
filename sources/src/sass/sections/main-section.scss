@@ -1,0 +1,124 @@
+.main-section {
+  padding-top: 14rem;
+
+  @media screen and (max-width: $mobile-screen) {
+    padding-top: 10rem;
+  }
+
+  &__bg {
+
+    img, source {
+      height: auto;
+
+      @media screen and (max-width: $desctop-xs) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__inner {
+    width: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__title {
+    max-width: 79rem;
+    margin-bottom: 5rem;
+
+    @media screen and (max-width: $table-screen) { 
+        max-width: 56rem;
+    }
+    
+    @media screen and (max-width: $mobile-screen) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
+
+    margin-bottom: 5rem;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      max-width: 38.6rem;
+
+      margin-bottom: 2rem;
+
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: $text-color;
+
+      .icon {
+        min-width: 3.8rem;
+        min-height: 3.8rem;
+
+        width: 0;
+        height: 0;
+
+        margin-right: 2rem;
+      }
+    }
+  }
+
+  &__whatssap {
+    padding: 4.5rem;
+
+    background-color: #fff;
+    box-shadow: 0px 0px 2.5rem rgba(41, 170, 243, 0.5);
+    border-radius: 0px 12rem 12rem 0px;
+
+    max-width: 658 / 1270 * 100%;
+
+    @media screen and (max-width: $desctop-xs) {
+      max-width: 63.81102%;
+    }
+
+    @media screen and (max-width: $table-screen) {
+      max-width: 92.81102%;
+    }
+
+    @media screen and (max-width: $mobile-screen) {
+      max-width: none;
+      padding: 2.5rem;
+      border-radius: 2rem;
+
+      margin-left: -2rem;
+      margin-right: -2rem;
+    }
+  }
+
+  &__whatssap-title {
+    font-size: 2.4rem;
+    font-weight: 500;
+
+    margin-bottom: 2rem;
+
+    @media screen and (max-width: $mobile-screen) {
+      text-align: center;
+      font-size: 2rem;
+    }
+  }
+
+  &__whatssap-btn{
+    margin-left: 0;
+    width: max-content;
+    
+    @media screen and (max-width: $mobile-screen) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

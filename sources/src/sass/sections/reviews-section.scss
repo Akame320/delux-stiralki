@@ -1,0 +1,82 @@
+.reviews-section {
+  padding: 4.5rem 0;
+  background: linear-gradient(180deg, rgba(240, 245, 255, 0) 0%, #F0F5FF 34.38%, #F0F5FF 72.12%, rgba(240, 245, 255, 0) 100%);
+
+  &__slider-wrapper {
+    position: relative;
+  }
+
+  &__number{
+    position: absolute;
+    top: 2rem;
+    left: -20rem;
+  }
+
+  &__slide-inner{
+    padding: 1rem;
+
+    @media screen and (max-width: $table-screen) {
+      padding: 0;
+    }
+
+    img,source{
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 100;
+
+    &-next {
+      transform: rotate(90deg);
+      cursor: pointer;
+
+      transition: all 0.1s linear;
+
+      &:hover {
+        transform: scale(1.05) rotate(90deg);
+      }
+    }
+
+    &-prev {
+      transform: rotate(-90deg);
+      cursor: pointer;
+
+      transition: all 0.1s linear;
+
+      &:hover {
+        transform: scale(1.05) rotate(-90deg);
+      }
+    }
+
+    .icon {
+      width: 2.8rem;
+      height: 5.1rem;
+    }
+  }
+
+  &__slider {
+    overflow: hidden;
+  }
+
+  &__slide {
+    width: 33.3333%;
+
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+
+.slick-track {
+  display: flex;
+}

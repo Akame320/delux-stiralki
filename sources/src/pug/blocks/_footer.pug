@@ -1,0 +1,34 @@
+footer(id='footer').footer
+	.container
+		.footer__wrapper
+			.footer__inner
+				.footer__number
+					.section-number.section-number--white 07
+				.footer__contacts
+					.footer__contacts-row
+						.footer__contacts-icon
+							+svgIcon({name: 'mark'})
+						.footer__contacts-data
+							span  г. Алматы , ул. ул.Брусиловского 167
+					.footer__contacts-row
+						.footer__contacts-icon
+							+svgIcon({name: 'tel-2'})
+						.footer__contacts-data
+							a(href='tel: +77777221715')  +7 777 722 17 15
+							a(href='tel: +77477771749') +7 747 777 17 49
+				.footer__map(id='map' style='height: 300px')
+
+		.footer__bot
+			.footer__logo
+				a(href="index.html").logo
+					img(src='images/logo-white.png').logo__img
+					span.logo__text Сервис центр по ремонту холодильников в Алматы и области
+			.footer__police
+				span © ТОО "Service center Deluxe
+				span Все права защищены.
+				span Копирование материалов запрещено!
+			.footer__dev
+				span Создано командой
+				picture
+					source(srcset='images/content/footer/logo-dev-pc.webp' type='image/webp')
+					img(src='images/content/footer/logo-dev-pc.png' )
